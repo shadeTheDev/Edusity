@@ -33,74 +33,66 @@ const Contact = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={onSubmit}>
-        <input type="text" name="name" required />
-        <input type="email" name="email" required />
-        <textarea name="message" required></textarea>
-
-        <button type="submit">Submit Form</button>
-      </form>
-      <span>{result}</span>
+    <div className="contact">
+      <div className="contact-col">
+        <h3>
+          Send us a Message <img src={msg_icon} alt="" />
+        </h3>
+        <p>
+          Feel free to reach out through contact form or find our contact
+          information below. Your feedback, questions, and suggestions are
+          important to us as we strive to provide exceptional service to our
+          university community.
+        </p>
+        <ul>
+          <li>
+            {" "}
+            <img src={mail_icon} alt="" />
+            thomasyancey24@gmail.com
+          </li>
+          <li>
+            {" "}
+            <img src={phone_icon} alt="" />
+            +1 630-770-6553
+          </li>
+          <li>
+            {" "}
+            <img src={location_icon} alt="" />
+            164 Lancaster Drive South, Bolingbrook <br /> IL 60585, United
+            States
+          </li>
+        </ul>
+      </div>
+      <div className="contact-col">
+        <form onSubmit={onSubmit}>
+          <label>Your Name</label>
+          <input
+            type="text"
+            name="name"
+            placeholder="Enter your Name"
+            required
+          />
+          <label>Phone Number</label>
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Enter your mobile number"
+            required
+          />
+          <label>Write your messages here</label>
+          <textarea
+            name="message"
+            rows="6"
+            placeholder="Enter your message"
+            required></textarea>
+          <button type="submit" className="btn dark-btn">
+            Submit Now
+            <img src={white_arrow} alt="" />
+          </button>
+        </form>
+        <span>{result}</span>
+      </div>
     </div>
   );
 };
-
-return (
-  <div className="contact">
-    <div className="contact-col">
-      <h3>
-        Send us a Message <img src={msg_icon} alt="" />
-      </h3>
-      <p>
-        Feel free to reach out through contact form or find our contact
-        information below. Your feedback, questions, and suggestions are
-        important to us as we strive to provide exceptional service to our
-        university community.
-      </p>
-      <ul>
-        <li>
-          {" "}
-          <img src={mail_icon} alt="" />
-          thomasyancey24@gmail.com
-        </li>
-        <li>
-          {" "}
-          <img src={phone_icon} alt="" />
-          +1 630-770-6553
-        </li>
-        <li>
-          {" "}
-          <img src={location_icon} alt="" />
-          164 Lancaster Drive South, Bolingbrook <br /> IL 60585, United States
-        </li>
-      </ul>
-    </div>
-    <div className="contact-col">
-      <form onSubmit={onSubmit}>
-        <label>Your Name</label>
-        <input type="text" name="name" placeholder="Enter your Name" required />
-        <label>Phone Number</label>
-        <input
-          type="tel"
-          name="phone"
-          placeholder="Enter your mobile number"
-          required
-        />
-        <label>Write your messages here</label>
-        <textarea
-          name="message"
-          rows="6"
-          placeholder="Enter your message"
-          required></textarea>
-        <button type="submit" className="btn dark-btn">
-          Submit Now
-          <img src={white_arrow} alt="" />
-        </button>
-      </form>
-      <span></span>
-    </div>
-  </div>
-);
-
 export default Contact;
